@@ -1,4 +1,6 @@
 const { success, fail } = require('./../../functions/createEmbeds')
+const createAddRoleSlashCommands = require('./../functions/createAddRoleSlashCommands')
+
 module.exports = async(interaction, config) => {
     let message = await interaction.client.channels.cache.get(config.roleChannelId).messages.fetch(config.roleMessageId)
 
@@ -36,7 +38,10 @@ module.exports = async(interaction, config) => {
                 "name": rowName,
                 "value": rowName
             })
+
         }
+
+        createAddRoleSlashCommands(interaction.client, config.roleGuildId, cmd.options.find(c => c.name === "role").options.find(c => c.name === "row").choices)
 
         interaction.client.guilds.cache.get("896789597802102804").commands.create(cmd)
         message.edit({embeds: message.embeds, components: message.components})

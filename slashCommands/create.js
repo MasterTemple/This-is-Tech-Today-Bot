@@ -1,5 +1,7 @@
 const { MessageEmbed } = require('discord.js')
 const { success, fail } = require('./../functions/createEmbeds')
+const createSetSlashCommands = require('./../functions/createSetSlashCommands')
+const createAddRowSlashCommands = require('./../functions/createAddRowSlashCommands')
 module.exports = async(interaction, config) => {
     let options = interaction.options._hoistedOptions
     let channel = options.find(o => o.name === "channel")?.value
@@ -43,7 +45,10 @@ module.exports = async(interaction, config) => {
     config.roleGuildId = roleEmbed.guild.id
     config.roleChannelId = roleEmbed.channel.id
     config.roleMessageId = roleEmbed.id
-    fs.writeFileSync("./config.json", JSON.stringify(config))
 
     success(interaction, config)
+    createSetSlashCommands(interaction.client, config.roleGuildId)
+    createAddRowSlashCommands(interaction.client, config.roleGuildId)
+    fs.writeFileSync("./config.json", JSON.stringify(config))
+
 }
