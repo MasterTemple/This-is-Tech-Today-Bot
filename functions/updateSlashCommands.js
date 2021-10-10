@@ -77,7 +77,20 @@ module.exports = async(client) => {
                                 "name": "image",
                                 "description": "Enter a URL to an image.",
                                 "type": 3,
-                                "required": true
+                                "required": false
+                            }
+                        ]
+                    },
+                    {
+                        "name": "thumbnail",
+                        "type": 1,
+                        "description": "Set the embed's thumbnail.",
+                        "options": [
+                            {
+                                "name": "thumbnail",
+                                "description": "Enter a URL to an image.",
+                                "type": 3,
+                                "required": false
                             }
                         ]
                     },
@@ -141,20 +154,7 @@ module.exports = async(client) => {
                                 "description": "Select the drop down to add this role to.",
                                 "type": 3,
                                 "required": true,
-                                "choices": [
-                                    {
-                                        "name": "Row1",
-                                        "value": "Row1"
-                                    },
-                                    {
-                                        "name": "Row2",
-                                        "value": "Row2"
-                                    },
-                                    {
-                                        "name": "Row3",
-                                        "value": "Row3"
-                                    }
-                                ]
+                                "choices": []
                             },
                             {
                                 "name": "name",

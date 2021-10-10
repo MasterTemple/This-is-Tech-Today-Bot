@@ -19,7 +19,7 @@ module.exports = {
         ]
         interaction.reply({embeds:[embed], components: components, ephemeral: true})
     },
-    fail(title="Interaction Failed!"){
+    fail(interaction, config, title="Interaction Failed!"){
         let embed = new MessageEmbed().setTitle(title).setColor("#bf2008")
         return embed  
     }

@@ -11,6 +11,9 @@ client.login(config.token)
 client.once("ready", async (client) => {
     updateSlashCommands(client)
     // updateRoleMessage(client, roleChannelId)
+
+
+
     console.log("Ready");
 })
 
