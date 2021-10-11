@@ -5,10 +5,10 @@ module.exports = async(interaction, config) => {
     interaction.values.forEach((eachRole) => {
         if(currentRoles.has(eachRole)){
             interaction.member.roles.remove(eachRole)
-            added = true
+            removed = true
         }else{
             interaction.member.roles.add(eachRole)
-            removed = true
+            added = true
         }
     })
     if(added && removed){

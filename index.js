@@ -14,7 +14,7 @@ client.once("ready", async (client) => {
 
 client.on("interactionCreate", async (interaction) => {
     // console.log(interaction);
-    if(interaction.type === "APPLICATION_COMMAND" && false){
+    if(interaction.type === "APPLICATION_COMMAND" && !interaction.member.roles.includes(interaction.guild.id)){
         interaction.reply({content: "You do not have permission to use this command.", ephemeral: true})
     }
     if(interaction.type === "APPLICATION_COMMAND"){
