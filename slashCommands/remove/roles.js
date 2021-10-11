@@ -4,6 +4,8 @@ module.exports = async(interaction, config) => {
 
     // let row = interaction.options._hoistedOptions.find(f=>f.name==="row").value
     message.embeds[0].title = "Select the Roles to Remove"
+    message.embeds[0].setColor("#ff0000")
+    delete message.embeds[0].description
     message.components.forEach((eachMessageComponent) => {
         eachMessageComponent.components[0].customId = eachMessageComponent.components[0].customId.replace(/role\[/g, "rm[")
         eachMessageComponent.components[0].max_values = eachMessageComponent.components[0].options.length
