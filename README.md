@@ -46,7 +46,7 @@
 
 ## 4. Repeat Step 2 to add more rows and Step 3 to add more roles.
 
-## 5. You are done. The users just select the role they want and the bot assigns them accordingly.
+## 5. You are done. The users just select the role they want and the bot assigns them accordingly. If the user already has the role, it will be removed from them.
 
 # Management
 

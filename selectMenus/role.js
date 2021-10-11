@@ -15,7 +15,7 @@ module.exports = async(interaction, config) => {
         interaction.reply({content: "Roles Updated!", ephemeral: true})
     }else if(added){
         interaction.reply({content: "Roles Added!", ephemeral: true})
-    }else if(remove){
+    }else if(removed){
         interaction.reply({content: "Roles Removed!", ephemeral: true})
     }
 }
