@@ -27,20 +27,6 @@ module.exports = async(interaction, config) => {
         embeds: [embed]
     })
 
-    let components = [
-        {
-            "type": 1,
-            "components": [
-                {
-                    "type": 2,
-                    "label": "View Embed!",
-                    "style": 5,
-                    "url": `discord://discord.com/channels/${roleEmbed.guild.id}/${roleEmbed.channel.id}/${roleEmbed.id}`
-                }
-            ]
-
-        }
-    ]
     let fs = require('fs')
     config.roleGuildId = roleEmbed.guild.id
     config.roleChannelId = roleEmbed.channel.id

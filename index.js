@@ -14,6 +14,9 @@ client.once("ready", async (client) => {
 
 client.on("interactionCreate", async (interaction) => {
     // console.log(interaction);
+    if(interaction.type === "APPLICATION_COMMAND" && false){
+        interaction.reply({content: "You do not have permission to use this command.", ephemeral: true})
+    }
     if(interaction.type === "APPLICATION_COMMAND"){
         if(interaction.options._subcommand){
             let func = require(`./slashCommands/${interaction.commandName}/${interaction.options._subcommand}`)
@@ -24,10 +27,10 @@ client.on("interactionCreate", async (interaction) => {
             func(interaction, config)
         }
     }else if(interaction.componentType === "SELECT_MENU"){
-        interaction.values.forEach((eachRole) => {
-            interaction.member.roles.add(eachRole)
-        })
-        interaction.reply({content: "Roles Added!", ephemeral: true})
+        // console.log(interaction);
+        let func = require(`./selectMenus/${interaction.customId.replace(/\[[^]+\]/g, "")}`)
+        func(interaction, config)
+
     }
     // interaction.reply({content: "not ready", ephemeral: true})
 })

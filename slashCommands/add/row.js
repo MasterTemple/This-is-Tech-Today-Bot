@@ -60,7 +60,7 @@ module.exports = async(interaction, config) => {
         // console.log(choices)
         createAddRoleSlashCommands(interaction.client, config.roleGuildId, choices)
 
-        interaction.client.guilds.cache.get("896789597802102804").commands.create(cmd)
+        // interaction.client.guilds.cache.get(config.roleGuildId).commands.create(cmd)
         message.edit({embeds: message.embeds, components: message.components})
         success(interaction, config)
 

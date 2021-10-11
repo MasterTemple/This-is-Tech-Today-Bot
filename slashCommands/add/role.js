@@ -32,7 +32,7 @@ module.exports = async(interaction, config) => {
                 }
                 p.options.push(obj)
                 p.options = p.options.filter( f=> f.label !== "blank")
-                console.log(p);
+                // console.log(p);
                 if(p.customId.match(/\[max\]/g) !== null){
                     p.max_values = p.options.length
                 }
