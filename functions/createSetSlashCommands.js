@@ -1,5 +1,5 @@
 module.exports = async (client, guildId) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async(resolve, reject) => {
         await client.guilds.cache.get(guildId).commands.create({
             "name": "set",
             "description": "Edit an embed's values.",

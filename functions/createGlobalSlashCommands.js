@@ -1,5 +1,5 @@
 module.exports = async(client) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
         await client.application.commands.set([{
             "name": "create",
             "type": 1,

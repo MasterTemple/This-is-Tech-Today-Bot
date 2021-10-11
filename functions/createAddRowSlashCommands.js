@@ -1,5 +1,5 @@
 module.exports = async (client, guildId) => {
-    return new Promise((resolve, reject) => {
+    return new Promise(async(resolve, reject) => {
         await client.guilds.cache.get(guildId).commands.create({
             "name": "add",
             "description": "Add rows or options to the embed's drop downs.",
@@ -14,7 +14,13 @@ module.exports = async (client, guildId) => {
                             "description": "Select the drop down title.",
                             "type": 3,
                             "required": true,
-                        }
+                        },
+                        {
+                            "name": "multiple",
+                            "description": "Can the user select multiple roles from this drop down?.",
+                            "type": 5,
+                            "required": true,
+                        },
                     ]
                 },            
             ]
