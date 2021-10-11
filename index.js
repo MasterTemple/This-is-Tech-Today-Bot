@@ -1,8 +1,6 @@
 const Discord = require('discord.js')
 
 var config = require('./config.json')
-let updateRoleMessage = require('./functions/updateRoleMessage')
-let updateSlashCommands = require('./functions/updateSlashCommands')
 let createGlobalSlashCommands = require('./functions/createGlobalSlashCommands')
 const client = new Discord.Client({
     intents: ['GUILD_MESSAGES', 'DIRECT_MESSAGES', 'GUILDS', 'GUILD_MEMBERS']
@@ -10,13 +8,8 @@ const client = new Discord.Client({
 
 client.login(config.token)
 client.once("ready", async (client) => {
-    createGlobalSlashCommands(client)
-
-    // updateSlashCommands(client)
-
-
-
-    console.log("Ready");
+    // createGlobalSlashCommands(client)
+    console.log(`${client.user.username} is online.`);
 })
 
 client.on("interactionCreate", async (interaction) => {

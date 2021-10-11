@@ -42,7 +42,13 @@ module.exports = async(client) => {
                     "required": false
                 },
             ]
-        }])
+        },
+        {
+            "name": "invite",
+            "description": 'Invite to another Discord server.',
+            "type": 1,
+        }
+    ])
         resolve()
     })
 }
