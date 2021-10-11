@@ -2,7 +2,7 @@ module.exports = async (client, guildId, choices) => {
     return new Promise(async(resolve, reject) => {
         let snowflake = await client.guilds.cache.get(guildId).commands.fetch()
         let snowflakeId = snowflake.find(f => f.name = "add").id
-        console.log(snowflakeId);
+        // console.log(snowflakeId);
         await client.guilds.cache.get(guildId).commands.delete(snowflakeId)
         await client.guilds.cache.get(guildId).commands.create({
             "name": "add",

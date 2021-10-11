@@ -23,6 +23,11 @@ client.on("interactionCreate", async (interaction) => {
             let func = require(`./slashCommands/${interaction.commandName}`)
             func(interaction, config)
         }
+    }else if(interaction.componentType === "SELECT_MENU"){
+        interaction.values.forEach((eachRole) => {
+            interaction.member.roles.add(eachRole)
+        })
+        interaction.reply({content: "Roles Added!", ephemeral: true})
     }
     // interaction.reply({content: "not ready", ephemeral: true})
 })
